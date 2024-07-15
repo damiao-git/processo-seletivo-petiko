@@ -18,4 +18,8 @@ class Pessoa extends Model
     {
         return $this->belongsTo(TipoPessoa::class);
     }
+
+    public function user_id(){
+        return $this->belongsTo(User::class);
+    }
 }
