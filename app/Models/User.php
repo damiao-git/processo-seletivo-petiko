@@ -44,6 +44,6 @@ class User extends Authenticatable
     ];
 
     public function pessoa(){
-        return $this->belongsTo(Pessoa::class);
+        return $this->hasOne(Pessoa::class);
     }
 }

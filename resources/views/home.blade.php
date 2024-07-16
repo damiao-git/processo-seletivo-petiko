@@ -1,3 +1,4 @@
+{{-- @dd($pessoa); --}}
 @extends('layouts.app')
 
 @section('content')

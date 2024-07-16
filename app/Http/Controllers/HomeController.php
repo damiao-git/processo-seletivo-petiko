@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pessoa;
+use App\Models\Tarefa;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +26,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $usuario = Auth::user();
+        $pessoa = Pessoa::where('user_id', $usuario->id)->first();
+        $tarefas = Tarefa::where('pessoa_id', $pessoa->id)->get();
+        return view('home', compact('usuario', 'pessoa', 'tarefas'));
     }
 }

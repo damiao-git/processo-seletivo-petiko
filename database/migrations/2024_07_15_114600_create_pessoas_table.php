@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('pessoas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('tipo_pessoa_id');
             $table->foreign('tipo_pessoa_id')->references('id')->on('tipo_pessoas')->onDelete('cascade');
             $table->timestamps();

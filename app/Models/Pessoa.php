@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Pessoa extends Model
 {
     use HasFactory;
-    protected $fillable = ["nome"];
+    protected $fillable = ["nome", "tipo_pessoa_id", "user_id", ];
 
     public function tarefas()
     {
@@ -20,6 +20,6 @@ class Pessoa extends Model
     }
 
     public function user_id(){
-        return $this->belongsTo(User::class);
+        return $this->hasOne(User::class);
     }
 }

@@ -13,6 +13,6 @@ class PessoaSeeder extends Seeder
      */
     public function run(): void
     {
-        Pessoa::create([ 'nome' => 'Damião', 'tipo_pessoa_id' => 1]);
+        Pessoa::create([ 'nome' => 'Damião', 'tipo_pessoa_id' => 1, 'user_id' => 1]);
     }
 }
